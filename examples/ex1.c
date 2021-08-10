@@ -1,41 +1,96 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-void bubbleSort(int arr[])
-{
-	int temp;
-	// 9 8 7 5 4
-	for (int i = 0; i < 5; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			printf("%d : %d ::: %d \n", (*arr), *(arr + 1), (*arr) > *(arr + 1));
-			if (*arr > *(arr + 1))
-			{
-				temp = *arr;
-				*arr = *(arr + 1);
-				*(arr + 1) = temp;
-			}
-			*arr++;
+void merge(int *a[], int left, int right) {
+	
+	int* sorted = (int*)malloc(4*(right-left+1));
+	int mid = (left+right)/2;
+	int i = left;
+	int j = mid + 1;
+	//sorted의 인덱스
+	int k = left; // (1,2,3,4)
+				  //  0 1 2 3
+				  //  (4,3,2,1)
+				  //   0 1 2 3
+	//int a[8] = { 1,3,5,7,2,4,6,8 };
+	//             0 1 2 3 4 5 6 7 
+	while (i<=mid && j<=right) {
+	
+		if (a[i] < a[j]) {
+			sorted[k++] = a[i];
+			i++;
+			//printf("1번\n");
+		}
+		else {
+			sorted[k++] = a[j];
+			j++;
+			//printf("2번\n");
 		}
 	}
 
+	//printf("3번\n");
+	while (j<=right) {
+		sorted[k] = a[j];
+		j++;
+		k++;
+			
+	}
+		
+	//printf("4번\n");
+	while (i <= mid) {
+		sorted[k] = a[i];
+		i++;
+		k++;
+	}
+		
+	
+	
+	for (int q = left; q <= right; q++) {
+
+		a[q] = sorted[q];
+		//printf("%d ", a[q]);
+	}
+	free(sorted);
+	//printf("\n");
 }
 
-int main()
-{
-	int arr[5];
-	for (int i = 0; i < 5; i++)
-	{
-		scanf("%d", &arr[i]);
+void merge_sort(int *arr[], int left, int right) {
+	
+	if (left < right) {
+		int mid = (right + left) / 2;
+		merge_sort(arr, left, mid);
+
+		merge_sort(arr, mid + 1, right);
+
+		merge(arr, left, right);
 	}
+	
+	//						(0, 7)
+	//1.           (0, 3)             (4, 7)
+	//2.     (0, 1)      (2, 3)      (4, 5)  (6, 7)   
+	//3. (0, 0) (1, 1) 
+
+}
 
 
-	bubbleSort(arr);
+int main() {
+	int N;
+	scanf_s("%d",&N);
 
-	for (int i = 0; i < 5; i++)
-	{
-		printf("%d ", arr[i]);
+	int *a = (int*)malloc(sizeof(int)*N);
+
+	for (int i = 0; i < N; i++) {
+		
+		scanf("%d", a[i]);
+		printf("%d",a[i]);
 	}
-
+	merge_sort(a, 0, N-1);
+	
+	for (int b = 0; b < N; b++) {
+		printf("%d\n", a[b]);
+	}
+	
+	free(a);
 	return 0;
+
 }
