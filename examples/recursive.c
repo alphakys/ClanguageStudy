@@ -1,5 +1,6 @@
 #include <stdio.h>
-
+#include <stdbool.h>
+/*
 int factorial(int num) {
 
 	if (num == 1) {
@@ -14,13 +15,26 @@ int factorial(int num) {
 }
 
 
+int gcd(int a, int b) {
+
+	if (a % b == 0) {
+		return b;
+	}
+	else {
+		return gcd(b, a%b);
+	}
+
+}
+*/
+
+
+
+
 
 int main() 
 {
-	int num = 5;
-
-	printf("%d", factorial(num));
-
+	
+	
 
 	return 0;
 }
