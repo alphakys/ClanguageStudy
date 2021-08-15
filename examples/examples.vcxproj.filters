@@ -27,7 +27,7 @@
     <ClCompile Include="Graph.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="recursive.c">
+    <ClCompile Include="stack.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
