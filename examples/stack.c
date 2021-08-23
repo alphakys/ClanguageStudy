@@ -3,84 +3,63 @@
 
 #define SIZE 100
 
-int stack[SIZE];
+int stackArr[SIZE];
 
-int top = -1; // 맨 위의 원소를 나타낼 변수. 기본값 -1
+int top = -1;
 
-bool isEmpty() {
-
-	if (top == -1) {
-		printf("stack is empty\n");
+bool *isEmpty() {
+	if (top <0) {
+		printf("Stack is empty");
 		return true;
 	}
-	else {
-		return false;
-	}
+	return false;
 }
 
 bool isFull() {
-
-	if (top >= SIZE - 1) {
-		printf(" Error : Stack is full\n");
+	if (top >= SIZE-1) {
+		printf("Stack is full");
 		return true;
 	}
-	else {
-		return false;
-	}
+	return false;
 }
 
-
-bool stPush(value) {
-
+void push(int value) {
 	if (!isFull()) {
-		top++;
-		stack[top] = value;
-		return true;
-	}
-
-}
-
-int stPop() {
-	
-	if (!isEmpty()) {
-		int temp = stack[top];
-		top--;
-		return temp;
-	}
-	
-}
-
-int stPeek() {
-
-	if (!isEmpty()) {
-		return stack[top];
+		++top;
+		stackArr[top] = value;
 	}
 }
 
-void stPrint() {
-
+int pop() {
 	if (!isEmpty()) {
-		for (int i = 0; i <= top; i++) {
-			printf("%d\n", stack[i]);
-		}
 		
+		return stackArr[top--];
+	}
+}
+
+void peek() {
+	if (!isEmpty()) {
+		top = top - 1;
+	}
+}
+
+void print() {
+	for (int i = 0; i < 100; i++) {
+		printf("%d\n", stackArr[i]);
 	}
 }
 
 
+typedef struct Stack {
+	#define size 100
+	#define top - 1
+	int array[size];
+	bool (*emptyPointer)();
+
+}Stack;
 
 int main() 
 {	
+	printf("%d", isEmpty());
 
-	int num = 1;
-	stPrint();
-	while (num<=5) {
-		
-		stPush(num++);
-	}
-	
-	printf("%d",stPeek());
-	
-	stPrint();
-	return 0;
 }
