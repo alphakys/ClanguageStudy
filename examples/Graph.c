@@ -6,9 +6,6 @@
 int arr[SIZE+1][SIZE+1] = {0,};
 
 
-
-
-
 void addComplete(int x, int y, int weight) {
 
 	arr[x][y] = weight;

@@ -36,5 +36,8 @@
     <ClCompile Include="Boj9184.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Boj1904.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
