@@ -56,7 +56,7 @@ typedef struct Stack {
 	int array[size];
 	bool (*emptyPointer)();
 
-}Stack;
+}Stack;  
 
 int main() 
 {	
