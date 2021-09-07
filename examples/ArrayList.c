@@ -9,9 +9,25 @@ int array[CAPACITY];
 int length = -1;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 bool isEmpty() {
 	if (length < 0 ) {
-		printf("¹è¿­ÀÌ ºñ¾ú½À´Ï´Ù.\n");
+		printf("ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
 		return true;
 	}
 	return false;
@@ -19,7 +35,7 @@ bool isEmpty() {
 
 bool isFull() {
 	if (length > CAPACITY) {
-		printf("¹è¿­ÀÌ °¡µæ Ã¡½À´Ï´Ù. ´õÀÌ»ó Ãß°¡ ÇÒ ¼ö ¾ø½À´Ï´Ù.\n");
+		printf("ï¿½è¿­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¡ï¿½ï¿½ï¿½Ï´ï¿½. ï¿½ï¿½ï¿½Ì»ï¿½ ï¿½ß°ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\n");
 		return true;
 	}
 	return false;
@@ -54,7 +70,7 @@ void addIndex(int element, int index) {
 			array[index] = element;
 		}
 		else if (index < 0) {
-			printf("ÀÎµ¦½º´Â 0º¸´Ù ÀÛÀ» ¼ö ¾ø½À´Ï´Ù.");
+			printf("ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 		else {
 			add(element);
