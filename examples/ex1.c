@@ -6,8 +6,8 @@ void merge(int *a[], int left, int right) {
 	int* sorted = (int*)malloc(4*(right-left+1));
 	int mid = (left+right)/2;
 	int i = left;
-	int j = mid + 1;
-	//sortedÀÇ ÀÎµ¦½º
+	int j = mid + 1; 
+	//sortedï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½
 	int k = left; // (1,2,3,4)
 				  //  0 1 2 3
 				  //  (4,3,2,1)
@@ -19,16 +19,16 @@ void merge(int *a[], int left, int right) {
 		if (a[i] < a[j]) {
 			sorted[k++] = a[i];
 			i++;
-			//printf("1¹ø\n");
+			//printf("1ï¿½ï¿½\n");
 		}
 		else {
 			sorted[k++] = a[j];
 			j++;
-			//printf("2¹ø\n");
+			//printf("2ï¿½ï¿½\n");
 		}
 	}
 
-	//printf("3¹ø\n");
+	//printf("3ï¿½ï¿½\n");
 	while (j<=right) {
 		sorted[k] = a[j];
 		j++;
@@ -36,7 +36,7 @@ void merge(int *a[], int left, int right) {
 			
 	}
 		
-	//printf("4¹ø\n");
+	//printf("4ï¿½ï¿½\n");
 	while (i <= mid) {
 		sorted[k] = a[i];
 		i++;
